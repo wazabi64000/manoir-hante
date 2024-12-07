@@ -2,15 +2,37 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Manoir Hanté - La Citation</title>
+  <title>Manoir Hanté - Grille Mystère</title>
+  <link rel="icon" href="assets/film-dhorreur.png" type="image/png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <h1>La dernière énigme...</h1>
-  <p>Pour découvrir la citation magique, ouvrez votre console (Ctrl+Shift+I ou F12) et suivez les instructions.</p>
-  <script>
-    // Obfuscation simplifiée
-    let _0x23a4=["\x4C\x61\x20\x63\x6C\x65\x66\x20\x6E\x65\x20\x72\x65\x73\x74\x65\x20\x71\x75\x65\x20\x73\x69\x20\x61\x74\x74\x61\x71\x75\x65\x20\x61\x75\x20\x73\x6F\x6C\x65\x69\x6C\x20\x70\x65\x74\x69\x74\x20\x61\x75\x20\x73\x6F\x6C\x65\x69\x6C\x20\x6C\x65\x20\x66\x61\x69\x74\x20\x65\x78\x69\x73\x74\x65\x72\x21"];console.log(_0x23a4[0]);
-  </script>
+  <h1>Trouvez le mot caché dans la grille !</h1>
+  <p>Un mot est caché Tel le meilleur de film de slasher </p>
+
+  <table>
+    <tr>
+      <td>S</td><td>C</td><td>R</td><td>Y</td>
+    </tr>
+    <tr>
+      <td>T</td><td>R</td><td>E</td><td>A</td>
+    </tr>
+    <tr>
+      <td>R</td><td>A</td><td>C</td><td>S</td>
+    </tr>
+    <tr>
+      <td>E</td><td>P</td><td>R</td><td>R</td>
+    </tr>
+  </table>
+
+  <form id="gridForm">
+    <label for="gridInput">Entrez le mot trouvé : </label>
+    <input type="text" id="gridInput" required />
+    <button type="submit">Valider</button>
+  </form>
+
+  <p id="feedback"></p>
+
+  <script src="script.js"></script>
 </body>
 </html>

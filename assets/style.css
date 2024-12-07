@@ -4,17 +4,48 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     padding: 20px;
+    background-image: url(https://images.unsplash.com/photo-1494376877685-d3d2559d4f82?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
   
   h1 {
     color: #ffcc00;
+    text-shadow: 2px 2px 5px black;
   }
   
   a {
     color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
   }
   
-  .hidden-image {
-    display: none;
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #ffcc00;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  table {
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  table td {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    text-align: center;
   }
   

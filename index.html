@@ -2,17 +2,25 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Manoir Hanté - Entrée</title>
+  <title>Manoir Hanté - Charade</title>
+  <link rel="icon" href="assets/film-dhorreur.png" type="image/png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <h1>Bienvenue dans le Manoir Hanté</h1>
-  <p>Trouvez l'indice caché pour progresser...</p>
-  <p>(Astuce : inspectez les éléments ou le code source de cette page !)</p>
-  <img src="assets/indice1.png" class="hidden-image" alt="Indice caché">
-  <a href="page2.html" class="hidden-image">Passez à l'étape suivante</a>
-  <script>
-    document.querySelector(".hidden-image").style.display = "block";
-  </script>
+  <h1>Bienvenue dans le Manoir Hanté !</h1>
+  <p>Résolvez cette charade pour avancer :</p>
+  <p><strong>Mon premier est Type d'écriture à la main</strong></p>
+  <p><strong>Mon deuxième est Scénario autrement dit </strong></p>
+  <p><strong>Mon tout est un langage de programmation </strong></p>
+
+  <form id="charadeForm">
+    <label for="charadeInput">Entrez votre réponse : </label>
+    <input type="text" id="charadeInput" required placeholder="Réponse..." />
+    <button type="submit">Valider</button>
+  </form>
+
+  <p id="feedback"></p>
+
+  <script src="script.js"></script>
 </body>
 </html>
