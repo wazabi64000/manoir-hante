@@ -4,13 +4,93 @@
   <meta charset="UTF-8">
   <title>Manoir Hanté - Victoire</title>
   <link rel="icon" href="assets/film-dhorreur.png" type="image/png">
-  <link rel="stylesheet" href="assets/style.css">
-</head>
-<body>
+<link rel="stylesheet" href="assets/style.css">
+  <!-- Lien vers le CDN Bootstrap pour le CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  
-  <h1>Félicitations ! Vous avez terminé l'escape game.</h1>
-  <p>Envoyez la citation correcte par email à la directrice pour recevoir votre prix.</p>
-  <p>Email de la directrice : <strong>directrice@example.com</strong></p>
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body class="bg-dark text-white">
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Félicitations ! Vous avez <span class="text-warning">presque</span> terminé l'escape game.</h1>
+    <p class="text-center mb-4">Envoyez la citation correcte par email à la directrice pour recevoir votre prix.</p>
+    <p class="text-center mb-4">Email de la directrice : <strong class="text-warning">directrice@example.com</strong></p>
+
+    <!-- Formulaire d'email avec Bootstrap -->
+    <form id="emailForm" class="bg-light p-4 rounded shadow-sm">
+      <fieldset class="mb-4">
+        <legend class="h4 text-center mb-3">Envoyer la citation correcte</legend>
+
+        <!-- Nom -->
+        <div class="mb-3">
+          <label for="userName" class="form-label">Votre nom :</label>
+          <input type="text" class="form-control" id="userName" required placeholder="Entrez votre nom">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="userEmail" class="form-label">Votre email :</label>
+          <input type="email" class="form-control" id="userEmail" required placeholder="Entrez votre email">
+        </div>
+
+        <!-- Citation -->
+        <div class="mb-3">
+          <label for="citation" class="form-label">Citation correcte :</label>
+          <textarea class="form-control" id="citation" required placeholder="Entrez la citation ici"></textarea>
+        </div>
+
+        <!-- Bouton -->
+        <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+      </fieldset>
+    </form>
+
+    <p id="feedback" class="text-center mt-3"></p>
+
+    <!-- Citation cachée -->
+    <div id="hiddenCitation" style="display: none;">
+      Codez comme si la personne qui finit par maintenir votre code est un psychopathe violent qui sait où vous vivez. - Jeff Atwood
+    </div>
+  </div>
+
+  <!-- Lien vers le CDN Bootstrap JS pour la fonctionnalité -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    emailjs.init("ehgzSJdsap4yP6VB3");
+
+    document.getElementById('emailForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const userName = document.getElementById('userName').value;
+      const userEmail = document.getElementById('userEmail').value;
+      const citation = document.getElementById('citation').value;
+      const hiddenCitation = document.getElementById('hiddenCitation').innerText.trim();
+
+      if (citation === hiddenCitation) {
+        const emailParams = {
+          to_email: 'C.A.mohammed@afec.fr',
+          from_name: userName,
+          user_email: userEmail,
+          citation_text: citation,
+        };
+
+        emailjs.send('service_lx3eprd', 'template_apjfp3a', emailParams)
+          .then(function(response) {
+            document.getElementById('feedback').innerText = 'Email envoyé avec succès !';
+            document.getElementById('feedback').classList.add('text-success');
+            console.log('Email envoyé avec succès !', response.status, response.text);
+          })
+          .catch(function(error) {
+            document.getElementById('feedback').innerText = 'Échec de l\'envoi de l\'email. Veuillez réessayer.';
+            document.getElementById('feedback').classList.add('text-danger');
+            console.error('Erreur lors de l\'envoi de l\'email', error);
+          });
+      } else {
+        document.getElementById('feedback').innerText = 'Citation incorrecte. Essayez encore !';
+        document.getElementById('feedback').classList.add('text-danger');
+      }
+    });
+  </script>
 </body>
 </html>

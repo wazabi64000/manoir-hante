@@ -2,21 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Manoir Hanté - Film d'Horreur</title>
+  <title>Manoir Hanté - La Dev</title>
   <link rel="icon" href="assets/film-dhorreur.png" type="image/png">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <h1>Quel film d'horreur commence par 'S' ?</h1>
-  <p>Recherchez un film d'horreur dont le titre commence par 'S'.</p>
+ 
+  <h1>Défi du Script</h1>
+  <p>Résolvez cette charade pour débloquer l’accès à la prochaine salle :</p>
 
-  <form id="movieForm">
-    <label for="movieInput">Entrez le titre du film : </label>
-    <input type="text" id="movieInput" required />
+  <blockquote>
+    "Mon premier est le D de DOM<br>
+    Mon deuxième est la commande pour changer d’endroit.<br>
+    Mon tout, écrit en deux lignes, te fait avancer vers la prochaine page."
+  </blockquote>
+
+  <form id="charadeForm">
+    <label for="charadeInput">Écrivez le script complet :</label>
+    <textarea id="charadeInput" rows="3" placeholder="Écrivez ici votre réponse"></textarea>
     <button type="submit">Valider</button>
   </form>
 
   <p id="feedback"></p>
+ 
 
   <script src="script.js"></script>
 </body>
